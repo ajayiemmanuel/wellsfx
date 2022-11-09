@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+{% load static %}
+{%  block content %}
+<html lang="en">
+<head>
+
+    <meta charset="utf-8" />
+    <title>WellsFx - 100% Reliable and trusted investment platform!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.png' %}">
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/select2.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/skins/orange.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components.min.css' %}">
+	
+	<!-- Live Style Switcher - demo only -->
+    <link rel="alternate stylesheet" type="text/css" title="orange" href="{% static 'css/skins/orange.css' %}" />
+    <link rel="alternate stylesheet" type="text/css" title="green" href="{% static 'css/skins/green.css' %}" />
+    <link rel="alternate stylesheet" type="text/css" title="blue" href="{% static 'css/skins/blue.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styleswitcher.css' %}" />
+
+    <!-- Template JS Files -->
+    <script src="{% static 'js/modernizr.js' %}"></script>
+
+</head>
+
+<body>
+    <!-- SVG Preloader Starts -->
+    <div id="preloader">
+        <div id="preloader-content">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="150px" height="150px" viewBox="100 100 400 400" xml:space="preserve">
+                <filter id="dropshadow" height="130%">
+                <feGaussianBlur in="SourceAlpha" stdDeviation="5"/>
+                <feOffset dx="0" dy="0" result="offsetblur"/>
+                <feFlood flood-color="red"/>
+                <feComposite in2="offsetblur" operator="in"/>
+                <feMerge>
+                <feMergeNode/>
+                <feMergeNode in="SourceGraphic"/>
+                </feMerge>
+                </filter>          
+                <path class="path" fill="#000000" d="M446.089,261.45c6.135-41.001-25.084-63.033-67.769-77.735l13.844-55.532l-33.801-8.424l-13.48,54.068
+                    c-8.896-2.217-18.015-4.304-27.091-6.371l13.568-54.429l-33.776-8.424l-13.861,55.521c-7.354-1.676-14.575-3.328-21.587-5.073
+                    l0.034-0.171l-46.617-11.64l-8.993,36.102c0,0,25.08,5.746,24.549,6.105c13.689,3.42,16.159,12.478,15.75,19.658L208.93,357.23
+                    c-1.675,4.158-5.925,10.401-15.494,8.031c0.338,0.485-24.579-6.134-24.579-6.134l-9.631,40.468l36.843,9.188
+                    c8.178,2.051,16.209,4.19,24.098,6.217l-13.978,56.17l33.764,8.424l13.852-55.571c9.235,2.499,18.186,4.813,26.948,6.995
+                    l-13.802,55.309l33.801,8.424l13.994-56.061c57.648,10.902,100.998,6.502,119.237-45.627c14.705-41.979-0.731-66.193-31.06-81.984
+                    C425.008,305.984,441.655,291.455,446.089,261.45z M368.859,369.754c-10.455,41.983-81.128,19.285-104.052,13.589l18.562-74.404
+                    C306.28,314.65,379.774,325.975,368.859,369.754z M379.302,260.846c-9.527,38.187-68.358,18.781-87.442,14.023l16.828-67.489
+                    C327.767,212.14,389.234,221.02,379.302,260.846z"/>       
+            </svg>
+        </div>
+    </div>
+    <!-- SVG Preloader Ends -->
+    <!-- Wrapper Starts -->
+    <div class="wrapper">
+        <!-- Header Starts -->
+        <header class="header">
+            <div class="container">
+                <div class="row">
+                    <!-- Logo Starts -->
+                    <div class="main-logo col-xs-12 col-md-3 col-md-2 col-lg-2 hidden-xs">
+                        <a href="{% url 'index' %}">
+							<img id="logo" class="img-responsive" src="{% static 'img/logo-dark.png' %}" alt="logo">
+						</a>
+                    </div>
+                    <!-- Logo Ends -->
+                    <!-- Statistics Starts -->
+                    <div class="col-md-7 col-lg-7">
+                        <ul class="unstyled bitcoin-stats text-center">
+                            <li>
+                                <h6>9,450 USD</h6><span>Last trade price</span></li>
+                            <li>
+                                <h6>+5.26%</h6><span>24 hour price</span></li>
+                            <li>
+                                <h6>12.820 BTC</h6><span>24 hour volume</span></li>
+                            <li>
+                                <h6>2,231,775</h6><span>active traders</span></li>
+                            <li>
+                                <div class="btcwdgt-price" data-bw-theme="light" data-bw-cur="usd"></div>
+                                <span>Live Bitcoin price</span>
+							</li>
+                        </ul>
+                    </div>
+                    <!-- Statistics Ends -->
+                    <!-- User Sign In/Sign Up Starts -->
+                    <div class="col-md-3 col-lg-3">
+                        <ul class="unstyled user">
+                            <li class="sign-in"><a href="{% url 'login' %}" class="btn btn-primary"><i class="fa fa-user"></i> sign in</a></li>
+                            <li class="sign-up"><a href="{% url 'register' %}" class="btn btn-primary"><i class="fa fa-user-plus"></i> register</a></li>
+                        </ul>
+                    </div>
+                    <!-- User Sign In/Sign Up Ends -->
+                </div>
+            </div>
+            <!-- Navigation Menu Starts -->
+            <nav class="site-navigation navigation" id="site-navigation">
+                <div class="container">
+                    <div class="site-nav-inner">
+                        <!-- Logo For ONLY Mobile display Starts -->
+                        <a class="logo-mobile" href="{% url 'index' %}">
+							<img id="logo-mobile" class="img-responsive" src="{% static 'img/logo-dark.png' %}" alt="">
+						</a>
+                        <!-- Logo For ONLY Mobile display Ends -->
+                        <!-- Toggle Icon for Mobile Starts -->
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+                        <!-- Toggle Icon for Mobile Ends -->
+                        <div class="collapse navbar-collapse navbar-responsive-collapse">
+                            <!-- Main Menu Starts -->
+                            <ul class="nav navbar-nav">
+                                <li><a href="{% url 'index' %}">Home</a></li>
+                                <li><a href="{% url 'about' %}">About Us</a></li>
+                                <li class="active"><a href="{% url 'contact' %}">Contact</a></li>
+                                <li><a href="{% url 'pricing' %}">Pricing</a></li>
+                                 <li><a href="{% url 'register' %}">Register</a></li>
+                                  <li><a href="{% url 'login' %}">Login</a></li>
+                                
+                                
+                               
+								
+                            </ul>
+                            <!-- Main Menu Ends -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Search Input Starts -->
+                <div class="site-search">
+                    <div class="container">
+                        <input type="text" placeholder="type your keyword and hit enter ...">
+                        <span class="close">×</span>
+                    </div>
+                </div>
+                <!-- Search Input Ends -->
+            </nav>
+            <!-- Navigation Menu Ends -->
+        </header>
+        <!-- Header Ends -->
+        <!-- Banner Area Starts -->
+        <section class="banner-area">
+			<div class="banner-overlay">
+				<div class="banner-text text-center">
+					<div class="container">
+						<!-- Section Title Starts -->
+						<div class="row text-center">
+							<div class="col-xs-12">
+								<!-- Title Starts -->
+								<h2 class="title-head">Get in <span>touch</span></h2>
+								<!-- Title Ends -->
+								<hr>
+								<!-- Breadcrumb Starts -->
+								<ul class="breadcrumb">
+									<li><a href="{% url 'index' %}"> home</a></li>
+									<li>contact</li>
+								</ul>
+								<!-- Breadcrumb Ends -->
+							</div>
+						</div>
+						<!-- Section Title Ends -->
+					</div>
+				</div>
+			</div>
+        </section>
+        <!-- Banner Area Ends -->
+        <!-- Contact Section Starts -->
+        <section class="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-8 contact-form">
+						<h3 class="col-xs-12">feel free to drop us a message</h3>
+                        <p class="col-xs-12">Need to speak to us? Do you have any queries or suggestions? Please contact us about all enquiries including membership and volunteer work using the form below.</p>
+                        <!-- Contact Form Starts -->
+                        <form class="form-contact" method="post" action="{% url 'index' %}">
+                            <!-- Input Field Starts -->
+                            <div class="form-group col-md-6">
+                                <input class="form-control" name="firstname" id="firstname" placeholder="FIRST NAME" type="text" required>
+                            </div>
+                            <!-- Input Field Ends -->
+                            <!-- Input Field Starts -->
+                            <div class="form-group col-md-6">
+                                <input class="form-control" name="lastname" id="lastname" placeholder="LAST NAME" type="text" required>
+                            </div>
+                            <!-- Input Field Ends -->
+                            <!-- Input Field Starts -->
+                            <div class="form-group col-md-6">
+                                <input class="form-control" name="email" id="email" placeholder="EMAIL" type="email" required>
+                            </div>
+                            <!-- Input Field Ends -->
+                            <!-- Input Field Starts -->
+                            <div class="form-group col-md-6">
+                                <input class="form-control" name="text" id="subject" placeholder="SUBJECT" type="text" required>
+                            </div>
+                            <!-- Input Field Ends -->
+                            <!-- Input Field Starts -->
+                            <div class="form-group col-xs-12">
+                                <textarea class="form-control" id="message" name="message" placeholder="MESSAGE" required></textarea>
+                            </div>
+                            <!-- Input Field Ends -->
+                            <!-- Submit Form Button Starts -->
+                            <div class="form-group col-xs-12 col-sm-4">
+                                    <button class="btn btn-primary" id="swal-2">Send Message</button>
+                            </div>
+                            <!-- Submit Form Button Ends -->
+                            <!-- Form Submit Message Starts -->
+                            <div class="col-xs-12 text-center output_message_holder d-none">
+								<p class="output_message"></p>
+                            </div>
+                             <!-- Form Submit Message Ends -->
+                        </form>
+						<!-- Contact Form Ends -->
+                    </div>
+					<!-- Contact Widget Starts -->
+                    <div class="col-xs-12 col-md-4">
+                        <div class="widget">
+                            <div class="contact-page-info">
+								<!-- Contact Info Box Starts -->
+                                <div class="contact-info-box">
+                                    <i class="fa fa-home big-icon"></i>
+                                    <div class="contact-info-box-content">
+                                        <h4>Address</h4>
+                                        <p>123 Disney Street Slim Av. Brooklyn Bridge, London England.</p>
+                                    </div>
+                                </div>
+								<!-- Contact Info Box Ends -->
+								<!-- Contact Info Box Starts -->
+                                <div class="contact-info-box">
+                                    <i class="fa fa-phone big-icon"></i>
+                                    <div class="contact-info-box-content">
+                                        <h4>Phone Numbers</h4>
+                                        <p>+1 (740) 318-1267</p>
+                                    </div>
+                                </div>
+								<!-- Contact Info Box Ends -->
+								<!-- Contact Info Box Starts -->
+                                <div class="contact-info-box">
+                                    <i class="fa fa-envelope big-icon"></i>
+                                    <div class="contact-info-box-content">
+                                        <h4>Email Addresses</h4>
+
+                                        <p>Support@wellsfx-trade.com</p>
+                                    </div>
+                                </div>
+								<!-- Contact Info Box Ends -->
+								<!-- Social Media Icons Starts -->
+                                <div class="contact-info-box">
+                                </div>
+								<!-- Social Media Icons Starts -->
+                            </div>
+                        </div>
+                    </div>
+					<!-- Contact Widget Ends -->
+                </div>
+            </div>
+        </section>
+        <!-- Contact Section Ends -->
+        <!-- Call To Action Section Starts -->
+        <section class="call-action-all">
+			<div class="call-action-all-overlay">
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- Call To Action Text Starts -->
+							<div class="action-text">
+								<h2>Get Started Today With Bitcoin</h2>
+								<p class="lead">Open account for free and start trading Bitcoins!</p>
+							</div>
+							<!-- Call To Action Text Ends -->
+							<!-- Call To Action Button Starts -->
+							<p class="action-btn"><a class="btn btn-primary" href="{% url 'register' %}">Register Now</a></p>
+							<!-- Call To Action Button Ends -->
+						</div>
+					</div>
+				</div>
+			</div>
+        </section>
+        <!-- Call To Action Section Ends -->
+        <!-- Footer Starts -->
+        <footer class="footer">
+            <!-- Footer Top Area Starts -->
+            <div class="top-footer">
+                <div class="container">
+                    <div class="row">
+                        <!-- Footer Widget Starts -->
+                        <div class="col-sm-4 col-md-2">
+                            <h4>Quick Links</h4>
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    <li><a href="{% url 'pricing' %}">Pricing</a></li>
+                                    <li><a href="{% url 'register' %}">Register</a></li>
+                                    <li><a href="{% url 'login' %}">Login</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Footer Widget Ends -->
+                        <!-- Footer Widget Starts -->
+                        <div class="col-sm-4 col-md-2">
+                            <h4>Help & Support</h4>
+                            <div class="menu">
+                                <ul>
+                                    <li><a href="{% url 'faq' %}">FAQ</a></li>
+                                    <li><a href="{% url 'terms' %}">Terms of Services</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Footer Widget Ends -->
+                        <!-- Footer Widget Starts -->
+                        <div class="col-sm-4 col-md-3">
+                            <h4>Contact Us </h4>
+                            <div class="contacts">
+                                <div>
+                                    <span>support@wellsfx-trade.com</span>
+                                </div>
+                                <div>
+                                    <span>+1 (740) 318-1267</span>
+                                </div>
+                                <div>
+                                    <span>London, England</span>
+                                </div>
+                                <div>
+                                    <span>mon-sat 08am &#x21FE; 05pm</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer Widget Ends -->
+						<!-- Footer Widget Starts -->
+                        <div class="col-sm-12 col-md-5">
+							<!-- Facts Starts -->
+							<div class="facts-footer">
+								<div>
+									<h5>$198.76B</h5>
+									<span>Market cap</span>
+								</div>
+								<div>
+									<h5>243K</h5>
+									<span>daily transactions</span>
+								</div>
+								<div>
+									<h5>369K</h5>
+									<span>active accounts</span>
+								</div>
+								<div>
+									<h5>190+</h5>
+									<span>supported countries</span>
+								</div>
+							</div>
+							<!-- Facts Ends -->
+							<hr>
+							<!-- Supported Payment Cards Logo Starts -->
+							<div class="payment-logos">
+								<h4 class="payment-title">supported payment methods</h4>
+								<img src="{% static 'img/icons/payment/american-express.png' %}" alt="american-express">
+								<img src="{% static 'img/icons/payment/mastercard.png' %}" alt="mastercard">
+								<img src="{% static 'img/icons/payment/visa.png'%}" alt="visa">
+								<img src="{% static 'img/icons/payment/paypal.png' %}" alt="paypal">
+								<img class="last" src="{% static 'img/icons/payment/maestro.png' %}" alt="maestro">
+							</div>
+							<!-- Supported Payment Cards Logo Ends -->
+                        </div>
+                        <!-- Footer Widget Ends -->
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Top Area Ends -->
+            <!-- Footer Bottom Area Starts -->
+            <div class="bottom-footer">
+                <div class="container">
+                    <div class="row">
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Bottom Area Ends -->
+            				<p class="text-center copyright-text"><a href="#">Copyright &copy; otis Foundation 2011-2022</a></p>
+
+        </footer>
+        <!-- Footer Ends -->
+		<!-- Back To Top Starts  -->
+        <a href="#" id="back-to-top" class="back-to-top fa fa-arrow-up"></a>
+		<!-- Back To Top Ends  -->
+		
+        <!-- Template JS Files -->
+        <script src="{% static 'js/jquery-2.2.4.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/select2.min.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script src="{% static 'js/custom1.js' %}"></script>
+		
+		<!-- Live Style Switcher JS File - only demo -->
+		<script src="{% static 'js/styleswitcher.js' %}"></script>
+		
+		<script src="{% static 'code.tidio.co_443/5ooczo49buouzlw2jsqhp4mp9c6dlmre.js' %}" async></script>
+
+<script>
+    var url = '../wati-integration-service.clare.ai/ShopifyWidget/shopifyWidget79dc.js?51821';
+    var s = document.createElement('script');
+    s.type = 'text/javascript';
+    s.async = true;
+    s.src = url;
+    var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#4dc247",
+      "ctaText":"",
+      "borderRadius":"25",
+      "marginLeft":"0",
+      "marginBottom":"50",
+      "marginRight":"50",
+      "position":"left"
+  },
+  "brandSetting":{
+      "brandName":"WellsFx",
+      "brandSubTitle":"Typically replies within minutes",
+      "brandImg":"https://seeklogo.com/images/W/whatsapp-logo-A5A7F17DC1-seeklogo.com.png",
+      "welcomeText":"Hi there!\nHow can I help you?",
+      "messageText":"Hello, I have a question about {{page_link}}",
+      "backgroundColor":"#0a5f54",
+      "ctaText":"Start Chat",
+      "borderRadius":"25",
+      "autoShow":false,
+      "phoneNumber":"17403181267"
+  }
+};
+    s.onload = function() {
+        CreateWhatsappChatWidget(options);
+    };
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+</script>
+
+
+
+    </div>
+    <!-- Wrapper Ends -->
+<!-- JS Libraies -->
+<script src="{% static 'modules/sweetalert/sweetalert.min.js' %}"></script>
+
+<!-- Page Specific JS File -->
+<script src="{% static 'js/page/modules-sweetalert.js' %}"></script>
+</body>
+
+{% endblock content %}
+</html>

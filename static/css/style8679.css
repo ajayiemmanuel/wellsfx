@@ -1,0 +1,22 @@
+
+.container1 {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+.container input {
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+}
+.container button {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #fda92a;
+  color: #0c0b0b;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
